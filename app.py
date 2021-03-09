@@ -19,7 +19,7 @@ db.create_all()
 
 @app.route('/')
 def go_home():
-    return redirect('/users')
+    return render_template('welcome.html')
 
 
 @app.route('/users')

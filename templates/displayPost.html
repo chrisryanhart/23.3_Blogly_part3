@@ -8,7 +8,7 @@
 
 <p>Tags:
     {% for tag in tags %}
-        {{tag.name}}
+        <button class="btn btn-success">{{tag.name}}</button>
     {% endfor %}
 </p>
 
@@ -16,9 +16,9 @@
 
 
 <form>
-    <button formaction="/users/{{user.id}}" formmethod="GET">Back</button>
-    <button formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
-    <button formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>
+    <button class="btn btn-secondary" formaction="/users/{{user.id}}" formmethod="GET">Back</button>
+    <button class="btn btn-primary" formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
+    <button class="btn btn-danger" formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>
 
 </form>
 
