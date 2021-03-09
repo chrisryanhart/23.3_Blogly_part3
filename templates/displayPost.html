@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>{{post.title}}</h3>
+
+<p>{{post.content}}</p>
+
+<p>Tags:
+    {% for tag in tags %}
+        {{tag.name}}
+    {% endfor %}
+</p>
+
+<p>By {{user.first_name}} {{user.last_name}}</p>
+
+
+<form>
+    <button formaction="/users/{{user.id}}" formmethod="GET">Back</button>
+    <button formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
+    <button formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>
+
+</form>
+
+{% endblock %}

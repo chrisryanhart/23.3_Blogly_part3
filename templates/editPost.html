@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Made it to Post edit!</h1>
+
+<!-- placeholder="{{post.title}}" -->
+
+<form>
+    <p>Title: <input type="text" name="title" value="{{post.title}}"></p>
+    <p>Content: <input type="text" name="content" value="{{post.content}}"></p>
+
+    
+    {% for tag in tags %}
+        {% if tag.name in tag_arr%}
+            <p><input type="checkbox" value="{{tag.id}}" checked="checked" name="check">{{tag.name}}</p>
+        {%else%}
+            <p><input type="checkbox" value="{{tag.id}}" name="check">{{tag.name}}</p>
+        {% endif%}
+    {% endfor %}
+    
+
+    <button formaction="/posts/{{post.id}}" formmethod="GET">Cancel</button>
+    <button formaction="/posts/{{post.id}}/edit" formmethod="POST">Edit</button>
+    
+</form>
+
+
+
+{% endblock %}
